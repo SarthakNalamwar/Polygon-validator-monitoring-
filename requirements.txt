@@ -1,0 +1,6 @@
+requests
+python-telegram-bot
+aiohttp
+parsimonious
+eth-abi
+eth-account

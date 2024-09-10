@@ -1,0 +1,20 @@
+version: '3'
+services:
+  heimdall:
+    image: linuxserver/heimdall:latest
+    restart: always
+    environment:
+      - HEIMDALL_MODE=validator
+      - HEIMDALL_RPC_LADDR=tcp://0.0.0.0:26657
+    ports:
+      - "26657:26657"
+
+  bor:
+    image: donbeave/bor:latest
+    restart: always
+    environment:
+      - BOR_NETWORK_ID=137
+      - BOR_CHAIN_ID=137
+      - BOR_BOOTNODES=enode://0x...@bor-bootnode.polygon.technology:30303
+    ports:
+      - "8545:8545"
